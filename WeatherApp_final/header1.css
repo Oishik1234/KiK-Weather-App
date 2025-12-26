@@ -1,0 +1,204 @@
+/* This section targets the navigation bar */
+
+.header{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+
+    background-color: #343434;
+    border-bottom: 1px solid rgb(240,240,240);
+    z-index: 100;
+}
+
+.hamburger-menu{
+    height:24px;
+    margin-left:24px;
+    margin-right:24px;
+    cursor: pointer;
+}
+
+.hamburger{
+    display:none;
+}
+
+.left-section{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.right-section {
+    width: auto;            /* Changed from 200px to auto */
+    min-width: 320px;       /* Ensures there is enough room for 4 items */
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; /* Aligns them to the right */
+    gap: 20px;              /* Adds consistent space between each word */
+    flex-shrink: 0;
+    color: white;
+}
+.weather-app-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+    margin-left:25px;
+}
+
+.middle-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.signup-link {
+    text-decoration: none; /* Removes the underline */
+    color: white;          /* Matches your text color */
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: opacity 0.2s;
+}
+
+.signup-link:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 750px) {
+
+    .right-section {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: -50px;
+        background: #2c3e50;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .right-section.active {
+        display: flex;
+    }
+
+    .search:hover{
+        color: #3498db;
+        transition: 0.3s;
+    }
+
+    .Weather-navbar:hover{
+        color: #3498db;
+        transition: 0.3s;
+    }
+
+    .About:hover{
+        color: #3498db;
+        transition: 0.3s;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .details {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+
+}
+
+.logout-link {
+    color: #ff4d4d; /* Red color to distinguish it from other links */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.logout-link:hover {
+    opacity: 0.8;
+    transform: scale(1.05); /* Slight pop effect on hover */
+}
+
+.search{
+    text-decoration: none; /* Removes the underline */
+    color: white;          /* Matches your text color */
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: opacity 0.2s;
+}
+
+.search:hover{
+     opacity: 0.8;
+}
+
+.Weather-navbar{
+    text-decoration: none; /* Removes the underline */
+    color: white;          /* Matches your text color */
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: opacity 0.2s;
+}
+
+.Weather-navbar:hover{
+    opacity:0.8;
+}
+
+.About{
+    text-decoration: none; /* Removes the underline */
+    color: white;          /* Matches your text color */
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: opacity 0.2s;
+}
+
+.About:hover{
+    opacity: 0.8;
+}
+
+/* Glassmorphism Badge styling */
+.greeting-badge {
+    display: none; /* JS will change this to 'inline-block' if logged in */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    padding: 8px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.4s ease-out;
+}
+
+/* Optional: Make the name pop with your theme color */
+.user-name {
+    font-weight: 700;
+    color: #3498db;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

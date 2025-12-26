@@ -1,0 +1,288 @@
+/* This is the weather.css stylesheet.
+Since there are a lot of functions here, I have added comments to make it readable */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    background-image: url('icons/clouds.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 200px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+}
+
+body.day-theme{
+    background-image: url('icons/daysky.jpg');
+}
+body.night-theme{
+    background-image: url('icons/nightsky.jpeg');
+}
+
+body.night-theme .search-bar::placeholder {
+    color: rgba(12, 12, 12, 0.29);
+}
+
+/* Page Title (Weather Forecast) */
+body.night-theme .page-title h1 {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+
+/* Main Weather Card Styling */
+.middle-section1 {
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    color: #333;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 0;
+    position: relative;
+    display:none;
+}
+
+/* Toggle Button (button to change °C to °F and vice versa) */
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.toggle-btn:hover {
+    background-color: #2980b9;
+}
+
+
+/* Country and City Name */
+.Weather h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+/* Date and Time*/
+.Weather p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Weather Icon*/
+#weather-icon {
+    width: 120px;
+    margin: 10px 0;
+}
+
+/* Temperature */
+.temp {
+    font-size: 56px;
+    font-weight: 700;
+    color: #2c3e50;
+    line-height: 1;
+    margin: 10px 0 5px 0;
+}
+
+/*Weather name(like Mist) */
+.weather_name_text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Details Section (Humidity, Wind, Pressure) */
+.details {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+/* Accessing each detail from details section*/
+.col {
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    flex:1;
+    padding: 20px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* icon styling */
+.col i {
+    font-size: 26px;
+    color: #4a90e2;
+    margin-bottom: 12px;
+}
+
+/* This targets the div containing the p tags inside .col */
+.col div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 5px;
+}
+
+/* The Value (e.g., 50%) */
+.col div p:first-child {
+    font-size: 18px;
+    color: #333;
+    margin:0;
+}
+
+/* The Label (e.g., Humidity) */
+.col div p:last-child {
+    font-size: 14px;
+    color: #777;
+    margin:0;
+}
+
+/* Forecast Section */
+.forecast-section {
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+/* 7 Day Forecast */
+.forecast-section h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Forecast grid */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+/* Forecast Grid is styled using JavaScript */
+
+/* > Targets only the main divs (not the nested divs insides divs) */
+.forecast-grid > div {
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* paragraph text inside forecast-grid */
+.forecast-grid p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Error Handling */
+.error {
+    color: red;
+    display: none;
+    margin-bottom: 15px;
+}
+
+.error{
+    display: none;
+}
+
+/* About Section */
+.section {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+}
+
+/* About & Footer */
+#about {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    margin: 10px;
+    padding-right:200px;
+    padding-left: 200px;
+    padding-top:100px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-bottom: 0px;
+
+}
+
+.about-icon {
+    color: #3498db;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-links a{
+    color: #bdc3c7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0 10px;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+/* Back to Top button Styling*/
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}

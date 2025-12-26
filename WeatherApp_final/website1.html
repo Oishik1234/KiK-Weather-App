@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KiK Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="header1.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+     <header class="header">
+        <div class="left-section">
+            <div class="weather-app-name">KiK Weather App</div>
+        </div>
+
+        <div class="right-section" id="nav-links">
+            <a href="signup.html" class="signup-link">SignUp</a>
+            <div class="search">Search</div>
+            <div class="Weather-navbar">Weather</div>
+            <div class="About">About</div>
+
+            <div id="logout-btn" class="logout-link">Logout</div>
+        </div>
+         <div class="hamburger">
+             <img class="hamburger-menu" src="icons/hamburger-menu.png" alt="menu">
+         </div>
+
+    </header>
+
+     <div class="middle-section">
+         <div id="user-greeting" class="greeting-badge"></div>
+    <div class="page-title">
+        <h1>Weather Forecast</h1>
+    </div>
+     </div>
+
+     <div class="middle-section2">
+
+         <div class="search-box">
+
+             <div class="row">
+                 <input class="search-bar" type="text" id="input-box" placeholder="Search for a city" autocomplete="off">
+                 <button class="search-button"><img src="icons/search.svg"></button>
+             </div>
+
+             <div class="result-box">
+             </div>
+
+         </div>
+
+     </div>
+
+         <br>
+         <br>
+
+    <div class="middle-section1">
+        <div>
+            <button id="unit-toggle" class="toggle-btn">Switch to °F</button>
+            <div class="error">
+                <p>Invalid City Name</p>
+            </div>
+            <div class="Weather">
+                <h2 class="city">Kolkata, India</h2>
+                <p class="date_time">2025-12-09, 9:31PM</p>
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <h1 class="temp">22*C</h1>
+                <p class="weather_name_text">Mist</p>
+
+                <div class="details">
+                    <div class="col">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <p class="Humidity">50%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <p class="wind">15km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <div>
+                            <p class="pressure">1014mb</p>
+                            <p>Pressure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="forecast-section">
+                <h3>7-Day Forecast</h3>
+                <div id="forecast-grid" class="forecast-grid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <section id="about" class="section">
+        <div class="about-content">
+            <h2>About This App</h2>
+            <br>
+            <p>This application allows users to check real-time weather conditions. Built for the KodeinKGP Web Task.</p>
+            <div class="about-icon">
+                <i class="fas fa-cloud-sun-rain fa-5x"></i>
+            </div>
+        </div>
+     <br>
+     <br>
+     <br>
+     <br>
+
+     <footer>
+
+        <div class="social-links">
+            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/company/kodeinkgp/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 KiK Weather Dashboard.</p>
+         <br>
+         <div class="footer-links">
+            <a href="https://www.termsfeed.com/live/98fbf7b8-51e1-48de-8567-56d3e53c9670" target="_blank" >Terms and Conditions</a>
+            <a href="https://www.freeprivacypolicy.com/live/62b779b1-cdc2-4061-b966-9d071b0be933" target="_blank">Privacy Policy</a>
+        </div>
+        <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </footer>
+    </section>
+
+<script src="autocomplete.js"></script>
+<script src="./script1.js"></script>
+
+</body>
+</html>
